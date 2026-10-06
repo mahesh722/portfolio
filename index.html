@@ -1,201 +1,550 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Mahesh Varma Sangaraju | Data Analyst Portfolio</title>
 
+  <meta
+    name="description"
+    content="Portfolio of Mahesh Varma Sangaraju, a Data Analyst and Data Science professional specializing in SQL, Python, Power BI, Tableau, forecasting, machine learning and business analytics."
+  />
+
   <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0c1728;
+      --card: #101d31;
+      --card-light: #ffffff;
+      --primary: #38bdf8;
+      --primary-dark: #0284c7;
+      --text: #e8eef8;
+      --muted: #9eabc0;
+      --dark-text: #162033;
+      --light-bg: #f4f7fb;
+      --border: rgba(255, 255, 255, 0.09);
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    html {
       scroll-behavior: smooth;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #f6f8fb;
-      color: #1f2937;
+      font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
 
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 88%);
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
     nav {
-      background: #0f172a;
-      padding: 18px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       position: sticky;
       top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      background: rgba(7, 17, 31, 0.88);
+      border-bottom: 1px solid var(--border);
     }
 
-    nav h2 {
-      color: white;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 25px;
-      font-size: 15px;
-    }
-
-    nav a:hover {
-      color: #38bdf8;
-    }
-
-    .hero {
-      min-height: 85vh;
-      background: linear-gradient(135deg, #0f172a, #1e3a8a);
-      color: white;
+    .nav-container {
+      min-height: 76px;
       display: flex;
       align-items: center;
-      padding: 80px 10%;
+      justify-content: space-between;
     }
 
-    .hero-content {
-      max-width: 800px;
+    .logo {
+      color: white;
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #d5ddea;
+      font-size: 15px;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: calc(100vh - 76px);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      width: 550px;
+      height: 550px;
+      position: absolute;
+      top: -160px;
+      right: -120px;
+      background: rgba(56, 189, 248, 0.13);
+      border-radius: 50%;
+      filter: blur(50px);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      align-items: center;
+      gap: 70px;
+      padding: 90px 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: 55px;
-      margin-bottom: 10px;
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: 1.02;
+      letter-spacing: -3px;
+      margin-bottom: 24px;
     }
 
     .hero h2 {
-      font-size: 26px;
-      color: #38bdf8;
-      margin-bottom: 20px;
+      color: var(--primary);
+      font-size: clamp(22px, 3vw, 32px);
+      margin-bottom: 24px;
+      font-weight: 700;
     }
 
     .hero p {
+      max-width: 720px;
+      color: var(--muted);
       font-size: 18px;
-      max-width: 700px;
-      margin-bottom: 30px;
-      color: #e2e8f0;
+      line-height: 1.8;
+      margin-bottom: 34px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
     }
 
     .btn {
-      display: inline-block;
-      padding: 12px 22px;
-      margin-right: 12px;
-      margin-top: 10px;
-      background: #38bdf8;
-      color: #0f172a;
-      text-decoration: none;
-      border-radius: 7px;
-      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 23px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: 0.25s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #052237;
+    }
+
+    .btn-primary:hover {
+      background: #7dd3fc;
+      transform: translateY(-2px);
     }
 
     .btn-outline {
+      border: 1px solid #44546e;
+      color: white;
       background: transparent;
-      border: 2px solid #38bdf8;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .hero-card {
+      padding: 34px;
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.08),
+        rgba(255,255,255,0.03)
+      );
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.28);
+    }
+
+    .hero-card h3 {
+      margin-bottom: 24px;
       color: white;
     }
 
+    .stat {
+      padding: 17px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stat:last-child {
+      border-bottom: none;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--primary);
+      font-size: 24px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* GENERAL SECTIONS */
+
     section {
-      padding: 75px 10%;
+      padding: 100px 0;
     }
 
-    .section-title {
-      font-size: 34px;
-      margin-bottom: 25px;
-      color: #0f172a;
+    .light-section {
+      background: var(--light-bg);
+      color: var(--dark-text);
     }
 
-    .about p {
-      max-width: 850px;
+    .section-heading {
+      margin-bottom: 50px;
+    }
+
+    .section-heading span {
+      color: var(--primary-dark);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      font-size: 39px;
+      margin-top: 8px;
+      letter-spacing: -1.2px;
+    }
+
+    .section-heading p {
+      margin-top: 14px;
+      max-width: 700px;
+      color: #64748b;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: #59677b;
       font-size: 17px;
+      margin-bottom: 20px;
     }
 
-    .skills-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+    .about-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
     }
 
-    .skill {
+    .highlight-box {
       background: white;
-      padding: 10px 18px;
-      border-radius: 7px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: 0 8px 30px rgba(34, 52, 82, 0.08);
     }
+
+    .highlight-box strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--primary-dark);
+    }
+
+    .highlight-box span {
+      color: #667085;
+      font-size: 14px;
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .skill-card {
+      padding: 27px;
+      border-radius: 15px;
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+
+    .skill-card h3 {
+      color: var(--primary);
+      margin-bottom: 17px;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* EXPERIENCE */
+
+    .timeline {
+      max-width: 900px;
+    }
+
+    .timeline-item {
+      padding-left: 30px;
+      border-left: 2px solid var(--primary);
+      position: relative;
+      margin-bottom: 45px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      background: var(--primary);
+      border-radius: 50%;
+      left: -7.5px;
+      top: 5px;
+    }
+
+    .timeline-item h3 {
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+
+    .company {
+      color: var(--primary-dark);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .date {
+      color: #718096;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .timeline-item p {
+      color: #5f6c7c;
+    }
+
+    /* PROJECTS */
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
     }
 
     .project-card {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      transition: 0.3s;
+      background: var(--card);
+      padding: 31px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: 0.25s;
     }
 
     .project-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
+      border-color: rgba(56, 189, 248, 0.55);
+    }
+
+    .project-number {
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 1px;
     }
 
     .project-card h3 {
-      margin-bottom: 10px;
-      color: #1d4ed8;
+      font-size: 23px;
+      margin: 12px 0 13px;
     }
 
     .project-card p {
-      margin-bottom: 15px;
+      color: var(--muted);
+      margin-bottom: 20px;
     }
 
-    .tools {
-      font-size: 14px;
-      font-weight: bold;
-      color: #475569;
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
-    .education {
+    .tech {
+      font-size: 12px;
+      padding: 7px 11px;
+      background: rgba(56, 189, 248, 0.1);
+      color: #7dd3fc;
+      border-radius: 20px;
+    }
+
+    /* EDUCATION */
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .education-card {
       background: white;
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: 0 8px 30px rgba(34, 52, 82, 0.07);
     }
 
-    .contact {
+    .education-card h3 {
+      color: #172033;
+      margin-bottom: 8px;
+    }
+
+    .education-card p {
+      color: #667085;
+    }
+
+    /* CONTACT */
+
+    .contact-box {
+      max-width: 820px;
       text-align: center;
-      background: #0f172a;
-      color: white;
+      margin: auto;
     }
 
-    .contact .section-title {
-      color: white;
+    .contact-box h2 {
+      font-size: 42px;
+      margin-bottom: 16px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      margin-bottom: 30px;
+      font-size: 17px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
     }
 
     footer {
-      background: #020617;
-      color: #94a3b8;
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
       text-align: center;
-      padding: 20px;
+      color: #77849a;
+      font-size: 14px;
     }
 
-    @media (max-width: 700px) {
-      nav {
-        flex-direction: column;
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
       }
 
-      nav div {
-        margin-top: 10px;
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      nav a {
-        margin: 8px;
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        max-width: 500px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid {
+        padding: 75px 0;
       }
 
       .hero h1 {
-        font-size: 38px;
+        font-size: 48px;
+        letter-spacing: -2px;
       }
 
-      .hero h2 {
-        font-size: 21px;
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-highlights {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 75px 0;
       }
     }
   </style>
@@ -203,145 +552,454 @@
 
 <body>
 
-  <nav>
-    <h2>Mahesh Varma</h2>
+  <!-- NAVIGATION -->
 
-    <div>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
+  <nav>
+    <div class="container nav-container">
+
+      <a href="#" class="logo">Mahesh Varma</a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+
     </div>
   </nav>
 
-  <section class="hero">
 
-    <div class="hero-content">
+  <!-- HERO -->
 
-      <h1>Mahesh Varma Sangaraju</h1>
+  <header class="hero">
 
-      <h2>Data Analyst | Data Scientist | Business Intelligence</h2>
+    <div class="container hero-grid">
 
-      <p>
-        Data Science graduate focused on transforming complex data into
-        actionable business insights using SQL, Python, Power BI, Tableau,
-        machine learning and statistical analysis.
-      </p>
+      <div>
 
-      <a href="#projects" class="btn">View My Projects</a>
+        <span class="eyebrow">Data • Analytics • Business Intelligence</span>
 
-      <a href="https://github.com/mahesh722"
-         target="_blank"
-         class="btn btn-outline">
-         GitHub
-      </a>
+        <h1>
+          Mahesh Varma<br />
+          Sangaraju
+        </h1>
+
+        <h2>
+          Data Analyst | Business Intelligence | Data Science
+        </h2>
+
+        <p>
+          I transform complex data into actionable business insights using
+          SQL, Python, Power BI, Tableau, statistical analysis and predictive
+          modeling. My work focuses on helping organizations understand
+          performance, identify opportunities and make better data-driven
+          decisions.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#projects" class="btn btn-primary">
+            Explore My Work
+          </a>
+
+          <a
+            href="https://github.com/mahesh722"
+            target="_blank"
+            class="btn btn-outline"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="mailto:maheshsangaraju4@gmail.com"
+            class="btn btn-outline"
+          >
+            Contact Me
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="hero-card">
+
+        <h3>Professional Focus</h3>
+
+        <div class="stat">
+          <strong>SQL + Python</strong>
+          <span>Data analysis, transformation and automation</span>
+        </div>
+
+        <div class="stat">
+          <strong>Power BI + Tableau</strong>
+          <span>Dashboards, KPIs and business intelligence</span>
+        </div>
+
+        <div class="stat">
+          <strong>Machine Learning</strong>
+          <span>Forecasting, classification and predictive analytics</span>
+        </div>
+
+        <div class="stat">
+          <strong>Business Analytics</strong>
+          <span>Turning data into measurable business decisions</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ABOUT -->
+
+  <section id="about" class="light-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <span>About</span>
+        <h2>Turning data into business value.</h2>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-text">
+
+          <p>
+            I am a Data Science graduate from the University of Texas at
+            Arlington with a background in computer science and practical
+            experience working with analytics, databases, business
+            intelligence and machine learning.
+          </p>
+
+          <p>
+            I enjoy solving problems that sit between technology and business:
+            cleaning and analyzing data, discovering patterns, developing
+            dashboards, forecasting performance and communicating insights
+            that teams can use to make better decisions.
+          </p>
+
+          <p>
+            I am particularly interested in Data Analytics, Business
+            Intelligence, Operations Analytics and Supply Chain Analytics.
+          </p>
+
+        </div>
+
+        <div class="about-highlights">
+
+          <div class="highlight-box">
+            <strong>Data Analysis</strong>
+            <span>SQL, Python, Excel and statistical analysis</span>
+          </div>
+
+          <div class="highlight-box">
+            <strong>Business Intelligence</strong>
+            <span>Power BI, Tableau, dashboards and KPI reporting</span>
+          </div>
+
+          <div class="highlight-box">
+            <strong>Machine Learning</strong>
+            <span>Regression, classification and forecasting</span>
+          </div>
+
+          <div class="highlight-box">
+            <strong>Business Problem Solving</strong>
+            <span>Turning analytical findings into actionable recommendations</span>
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
 
   </section>
 
-  <section id="about" class="about">
 
-    <h2 class="section-title">About Me</h2>
-
-    <p>
-      I am a Data Science graduate with experience working with SQL, Python,
-      business intelligence tools and machine learning techniques. I enjoy
-      analyzing business data, identifying trends, building dashboards and
-      developing analytical solutions that support better decision-making.
-    </p>
-
-  </section>
+  <!-- SKILLS -->
 
   <section id="skills">
 
-    <h2 class="section-title">Technical Skills</h2>
+    <div class="container">
 
-    <div class="skills-container">
+      <div class="section-heading">
+        <span>Expertise</span>
+        <h2>Technical Skills</h2>
+      </div>
 
-      <div class="skill">SQL</div>
-      <div class="skill">Python</div>
-      <div class="skill">Power BI</div>
-      <div class="skill">Tableau</div>
-      <div class="skill">Excel</div>
-      <div class="skill">Oracle</div>
-      <div class="skill">MySQL</div>
-      <div class="skill">Pandas</div>
-      <div class="skill">NumPy</div>
-      <div class="skill">Scikit-learn</div>
-      <div class="skill">Machine Learning</div>
-      <div class="skill">Forecasting</div>
-      <div class="skill">A/B Testing</div>
-      <div class="skill">ETL</div>
-      <div class="skill">Data Visualization</div>
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h3>Data & Programming</h3>
+          <p>
+            SQL<br />
+            Python<br />
+            Pandas<br />
+            NumPy<br />
+            SciPy
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Business Intelligence</h3>
+          <p>
+            Power BI<br />
+            DAX<br />
+            Tableau<br />
+            Excel<br />
+            KPI Reporting
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Analytics & ML</h3>
+          <p>
+            Regression<br />
+            Classification<br />
+            Random Forest<br />
+            Forecasting<br />
+            A/B Testing
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Data & Workflow</h3>
+          <p>
+            Oracle<br />
+            MySQL<br />
+            ETL<br />
+            Data Validation<br />
+            Git & Jupyter
+          </p>
+        </div>
+
+      </div>
 
     </div>
 
   </section>
+
+
+  <!-- EXPERIENCE -->
+
+  <section id="experience" class="light-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <span>Career</span>
+        <h2>Professional Experience</h2>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+
+          <h3>Machine Learning Intern</h3>
+
+          <div class="company">
+            HCL Technologies Limited
+          </div>
+
+          <div class="date">
+            Aug 2022 – Oct 2022
+          </div>
+
+          <p>
+            Worked on an online banking platform using Java and Oracle,
+            improving database design, data consistency and system performance
+            through normalization, optimized connectivity and structured
+            client-server architecture.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJECTS -->
 
   <section id="projects">
 
-    <h2 class="section-title">Featured Projects</h2>
+    <div class="container">
 
-    <div class="projects-grid">
-
-      <div class="project-card">
-
-        <h3>Customer Churn Prediction</h3>
+      <div class="section-heading">
+        <span>Selected Work</span>
+        <h2>Featured Projects</h2>
 
         <p>
-          Built a machine learning solution to identify customers at risk of
-          churn and developed a Power BI dashboard for retention analysis.
+          A selection of analytics, machine learning and business intelligence
+          projects focused on solving real business problems.
         </p>
+      </div>
 
-        <div class="tools">
-          Python • SQL • Power BI
-        </div>
+      <div class="projects-grid">
+
+
+        <article class="project-card">
+
+          <div class="project-number">
+            PROJECT 01
+          </div>
+
+          <h3>
+            Customer Churn Prediction & Retention Dashboard
+          </h3>
+
+          <p>
+            Built a predictive analytics pipeline to identify customers at
+            higher risk of churn and created a Power BI dashboard to help
+            prioritize retention efforts.
+          </p>
+
+          <div class="tech-list">
+            <span class="tech">Python</span>
+            <span class="tech">SQL</span>
+            <span class="tech">Power BI</span>
+            <span class="tech">Machine Learning</span>
+          </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+          <div class="project-number">
+            PROJECT 02
+          </div>
+
+          <h3>
+            Retail Sales Forecasting & Executive KPI Dashboard
+          </h3>
+
+          <p>
+            Analyzed transaction and SKU-level sales data, developed forecasting
+            models and created an executive dashboard to identify trends,
+            demand patterns and stockout risks.
+          </p>
+
+          <div class="tech-list">
+            <span class="tech">SQL</span>
+            <span class="tech">Python</span>
+            <span class="tech">Tableau</span>
+            <span class="tech">Forecasting</span>
+          </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+          <div class="project-number">
+            PROJECT 03
+          </div>
+
+          <h3>
+            E-Commerce A/B Testing Analysis
+          </h3>
+
+          <p>
+            Evaluated checkout experiments using statistical hypothesis testing
+            to determine whether changes produced meaningful improvements in
+            customer conversion.
+          </p>
+
+          <div class="tech-list">
+            <span class="tech">Python</span>
+            <span class="tech">SQL</span>
+            <span class="tech">Statistics</span>
+            <span class="tech">A/B Testing</span>
+          </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+          <div class="project-number">
+            PROJECT 04
+          </div>
+
+          <h3>
+            Hospital Readmission Risk Analytics
+          </h3>
+
+          <p>
+            Built classification models to identify patients at elevated risk
+            of readmission and analyzed important variables influencing
+            predicted outcomes.
+          </p>
+
+          <div class="tech-list">
+            <span class="tech">Python</span>
+            <span class="tech">Scikit-learn</span>
+            <span class="tech">Classification</span>
+            <span class="tech">Feature Engineering</span>
+          </div>
+
+        </article>
 
       </div>
 
-      <div class="project-card">
+    </div>
 
-        <h3>Retail Sales Forecasting</h3>
+  </section>
 
-        <p>
-          Analyzed retail transaction data and created forecasting models and
-          KPI dashboards to identify sales trends and inventory issues.
-        </p>
 
-        <div class="tools">
-          SQL • Python • Tableau
-        </div>
+  <!-- EDUCATION -->
 
+  <section id="education" class="light-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <span>Education</span>
+        <h2>Academic Background</h2>
       </div>
 
-      <div class="project-card">
+      <div class="education-grid">
 
-        <h3>E-Commerce A/B Testing</h3>
+        <div class="education-card">
 
-        <p>
-          Evaluated checkout conversion experiments using statistical testing
-          to determine whether website changes produced significant results.
-        </p>
+          <h3>
+            Master of Science in Data Science
+          </h3>
 
-        <div class="tools">
-          Python • SQL • Statistics
+          <p>
+            The University of Texas at Arlington
+          </p>
+
+          <p>
+            Arlington, Texas
+          </p>
+
         </div>
 
-      </div>
 
-      <div class="project-card">
+        <div class="education-card">
 
-        <h3>Hospital Readmission Analytics</h3>
+          <h3>
+            Bachelor of Technology in Computer Science
+          </h3>
 
-        <p>
-          Developed classification models to identify patients at higher risk
-          of hospital readmission and analyzed important predictive factors.
-        </p>
+          <p>
+            Sathyabama Institute of Science & Technology
+          </p>
 
-        <div class="tools">
-          Python • Scikit-learn
+          <p>
+            Chennai, India
+          </p>
+
         </div>
 
       </div>
@@ -350,52 +1008,56 @@
 
   </section>
 
-  <section id="education" class="education">
 
-    <h2 class="section-title">Education</h2>
+  <!-- CONTACT -->
 
-    <h3>Master of Science in Data Science</h3>
+  <section id="contact">
 
-    <p>
-      University of Texas at Arlington
-    </p>
+    <div class="container contact-box">
 
-    <br>
+      <span class="eyebrow">
+        Let's Connect
+      </span>
 
-    <h3>Bachelor of Technology in Computer Science</h3>
+      <h2>
+        Interested in working together?
+      </h2>
 
-    <p>
-      Sathyabama Institute of Science & Technology
-    </p>
+      <p>
+        I am interested in opportunities involving Data Analytics, Business
+        Intelligence, Operations Analytics and Supply Chain Analytics.
+      </p>
+
+      <div class="contact-buttons">
+
+        <a
+          href="mailto:maheshsangaraju4@gmail.com"
+          class="btn btn-primary"
+        >
+          Email Me
+        </a>
+
+        <a
+          href="https://github.com/mahesh722"
+          target="_blank"
+          class="btn btn-outline"
+        >
+          GitHub
+        </a>
+
+      </div>
+
+    </div>
 
   </section>
 
-  <section id="contact" class="contact">
-
-    <h2 class="section-title">Let's Connect</h2>
-
-    <p>
-      Interested in Data Analytics, Business Intelligence and Data Science opportunities.
-    </p>
-
-    <br>
-
-    <a href="mailto:maheshsangaraju4@gmail.com"
-       class="btn">
-       Email Me
-    </a>
-
-    <a href="https://github.com/mahesh722"
-       target="_blank"
-       class="btn btn-outline">
-       GitHub
-    </a>
-
-  </section>
 
   <footer>
-    © 2026 Mahesh Varma Sangaraju | Data Analytics Portfolio
+    <div class="container">
+      © 2026 Mahesh Varma Sangaraju. Built for Data Analytics & Business Intelligence opportunities.
+    </div>
   </footer>
+
 
 </body>
 </html>
