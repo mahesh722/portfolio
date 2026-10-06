@@ -3,55 +3,399 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mahesh Varma | Data Analytics Portfolio</title>
+
+  <title>Mahesh Varma Sangaraju | Data Analyst Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6f8fb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    nav {
+      background: #0f172a;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+    }
+
+    nav h2 {
+      color: white;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      min-height: 85vh;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 80px 10%;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 55px;
+      margin-bottom: 10px;
+    }
+
+    .hero h2 {
+      font-size: 26px;
+      color: #38bdf8;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 700px;
+      margin-bottom: 30px;
+      color: #e2e8f0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      margin-right: 12px;
+      margin-top: 10px;
+      background: #38bdf8;
+      color: #0f172a;
+      text-decoration: none;
+      border-radius: 7px;
+      font-weight: bold;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #38bdf8;
+      color: white;
+    }
+
+    section {
+      padding: 75px 10%;
+    }
+
+    .section-title {
+      font-size: 34px;
+      margin-bottom: 25px;
+      color: #0f172a;
+    }
+
+    .about p {
+      max-width: 850px;
+      font-size: 17px;
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      background: white;
+      padding: 10px 18px;
+      border-radius: 7px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card h3 {
+      margin-bottom: 10px;
+      color: #1d4ed8;
+    }
+
+    .project-card p {
+      margin-bottom: 15px;
+    }
+
+    .tools {
+      font-size: 14px;
+      font-weight: bold;
+      color: #475569;
+    }
+
+    .education {
+      background: white;
+    }
+
+    .contact {
+      text-align: center;
+      background: #0f172a;
+      color: white;
+    }
+
+    .contact .section-title {
+      color: white;
+    }
+
+    footer {
+      background: #020617;
+      color: #94a3b8;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav div {
+        margin-top: 10px;
+      }
+
+      nav a {
+        margin: 8px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .hero h2 {
+        font-size: 21px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <h1>Mahesh Varma Sangaraju</h1>
+  <nav>
+    <h2>Mahesh Varma</h2>
 
-  <h2>Data Analyst | Data Scientist | Business Intelligence</h2>
+    <div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-  <p>
-    Welcome to my portfolio. I am a Data Science graduate with experience in
-    SQL, Python, Power BI, Tableau, machine learning, forecasting, and business
-    analytics.
-  </p>
+  <section class="hero">
 
-  <h2>About Me</h2>
+    <div class="hero-content">
 
-  <p>
-    I enjoy using data to solve business problems, identify trends, build
-    dashboards, develop predictive models, and support data-driven
-    decision-making.
-  </p>
+      <h1>Mahesh Varma Sangaraju</h1>
 
-  <h2>Technical Skills</h2>
+      <h2>Data Analyst | Data Scientist | Business Intelligence</h2>
 
-  <p>
-    SQL | Python | Power BI | Tableau | Excel | Oracle | MySQL |
-    Machine Learning | Forecasting | A/B Testing | ETL
-  </p>
+      <p>
+        Data Science graduate focused on transforming complex data into
+        actionable business insights using SQL, Python, Power BI, Tableau,
+        machine learning and statistical analysis.
+      </p>
 
-  <h2>Projects</h2>
+      <a href="#projects" class="btn">View My Projects</a>
 
-  <h3>Customer Churn Prediction & Retention Dashboard</h3>
-  <p>Python, SQL, Power BI</p>
+      <a href="https://github.com/mahesh722"
+         target="_blank"
+         class="btn btn-outline">
+         GitHub
+      </a>
 
-  <h3>Retail Sales Forecasting & Executive KPI Dashboard</h3>
-  <p>SQL, Python, Tableau</p>
+    </div>
 
-  <h3>E-Commerce A/B Testing Analysis</h3>
-  <p>Python, SQL, Statistics</p>
+  </section>
 
-  <h3>Hospital Readmission Risk Analytics</h3>
-  <p>Python, Scikit-learn</p>
+  <section id="about" class="about">
 
-  <h2>Contact</h2>
+    <h2 class="section-title">About Me</h2>
 
-  <p>
-    LinkedIn | GitHub | Email
-  </p>
+    <p>
+      I am a Data Science graduate with experience working with SQL, Python,
+      business intelligence tools and machine learning techniques. I enjoy
+      analyzing business data, identifying trends, building dashboards and
+      developing analytical solutions that support better decision-making.
+    </p>
+
+  </section>
+
+  <section id="skills">
+
+    <h2 class="section-title">Technical Skills</h2>
+
+    <div class="skills-container">
+
+      <div class="skill">SQL</div>
+      <div class="skill">Python</div>
+      <div class="skill">Power BI</div>
+      <div class="skill">Tableau</div>
+      <div class="skill">Excel</div>
+      <div class="skill">Oracle</div>
+      <div class="skill">MySQL</div>
+      <div class="skill">Pandas</div>
+      <div class="skill">NumPy</div>
+      <div class="skill">Scikit-learn</div>
+      <div class="skill">Machine Learning</div>
+      <div class="skill">Forecasting</div>
+      <div class="skill">A/B Testing</div>
+      <div class="skill">ETL</div>
+      <div class="skill">Data Visualization</div>
+
+    </div>
+
+  </section>
+
+  <section id="projects">
+
+    <h2 class="section-title">Featured Projects</h2>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+
+        <h3>Customer Churn Prediction</h3>
+
+        <p>
+          Built a machine learning solution to identify customers at risk of
+          churn and developed a Power BI dashboard for retention analysis.
+        </p>
+
+        <div class="tools">
+          Python • SQL • Power BI
+        </div>
+
+      </div>
+
+      <div class="project-card">
+
+        <h3>Retail Sales Forecasting</h3>
+
+        <p>
+          Analyzed retail transaction data and created forecasting models and
+          KPI dashboards to identify sales trends and inventory issues.
+        </p>
+
+        <div class="tools">
+          SQL • Python • Tableau
+        </div>
+
+      </div>
+
+      <div class="project-card">
+
+        <h3>E-Commerce A/B Testing</h3>
+
+        <p>
+          Evaluated checkout conversion experiments using statistical testing
+          to determine whether website changes produced significant results.
+        </p>
+
+        <div class="tools">
+          Python • SQL • Statistics
+        </div>
+
+      </div>
+
+      <div class="project-card">
+
+        <h3>Hospital Readmission Analytics</h3>
+
+        <p>
+          Developed classification models to identify patients at higher risk
+          of hospital readmission and analyzed important predictive factors.
+        </p>
+
+        <div class="tools">
+          Python • Scikit-learn
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="education" class="education">
+
+    <h2 class="section-title">Education</h2>
+
+    <h3>Master of Science in Data Science</h3>
+
+    <p>
+      University of Texas at Arlington
+    </p>
+
+    <br>
+
+    <h3>Bachelor of Technology in Computer Science</h3>
+
+    <p>
+      Sathyabama Institute of Science & Technology
+    </p>
+
+  </section>
+
+  <section id="contact" class="contact">
+
+    <h2 class="section-title">Let's Connect</h2>
+
+    <p>
+      Interested in Data Analytics, Business Intelligence and Data Science opportunities.
+    </p>
+
+    <br>
+
+    <a href="mailto:maheshsangaraju4@gmail.com"
+       class="btn">
+       Email Me
+    </a>
+
+    <a href="https://github.com/mahesh722"
+       target="_blank"
+       class="btn btn-outline">
+       GitHub
+    </a>
+
+  </section>
+
+  <footer>
+    © 2026 Mahesh Varma Sangaraju | Data Analytics Portfolio
+  </footer>
 
 </body>
 </html>
